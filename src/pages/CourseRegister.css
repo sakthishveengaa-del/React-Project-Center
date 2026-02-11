@@ -1,0 +1,124 @@
+/* --- Root Layout --- */
+.register-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+  padding: 20px;
+  background-color: #f4f7fa; /* Light professional background */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* --- Form Card --- */
+.register-card {
+  background: #ffffff;
+  width: 100%;
+  max-width: 450px;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.register-card h2 {
+  color: #2563eb; /* Primary Blue */
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+/* --- Form Elements --- */
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.register-form input, 
+.register-form select {
+  padding: 12px 15px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.register-form input:focus, 
+.register-form select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* --- Radio Group --- */
+.radio-container {
+  display: flex;
+  gap: 20px;
+  padding: 10px 5px;
+  background: #f9fafb;
+  border-radius: 8px;
+  justify-content: center;
+}
+
+.radio-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  color: #4b5563;
+  font-weight: 500;
+}
+
+/* --- Buttons --- */
+.btn-submit {
+  background-color: #2563eb;
+  color: white;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-submit:hover:not(:disabled) {
+  background-color: #1e40af;
+}
+
+.btn-submit:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+.btn-secondary {
+  background-color: #f3f4f6;
+  border: 1px solid #d1d5db;
+  padding: 8px 16px;
+  border-radius: 6px;
+  color: #374151;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.btn-secondary:hover {
+  background-color: #e5e7eb;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 480px) {
+  .register-card {
+    padding: 20px;
+  }
+  
+  .register-card h2 {
+    font-size: 1.5rem;
+  }
+}

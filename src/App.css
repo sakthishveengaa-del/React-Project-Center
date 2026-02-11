@@ -1,0 +1,175 @@
+/* --- Modern SaaS Design System --- */
+:root {
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --bg-body: #f1f5f9;
+  --bg-card: #ffffff;
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --border-color: #e2e8f0;
+  --radius-lg: 16px;
+  --radius-md: 10px;
+  --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+}
+
+/* --- Global Setup --- */
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-body);
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+/* --- Layout Containers --- */
+.page-container, .PTS {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 40px;
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  box-sizing: border-box;
+}
+
+/* --- Typography (Home/About) --- */
+.PC, h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.025em;
+}
+
+.MT {
+  font-size: 1.25rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  margin-bottom: 2rem;
+  display: block;
+}
+
+.WI {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  color: var(--text-main);
+  border-bottom: 3px solid var(--primary);
+  display: inline-block;
+  padding-bottom: 5px;
+  margin-bottom: 1rem;
+}
+
+.P {
+  font-size: 1.1rem;
+  color: #475569;
+  margin-bottom: 1.5rem;
+  text-align: justify;
+}
+
+.H4 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  color: var(--text-main);
+}
+
+/* --- Project & Course List Styling --- */
+.UL {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.LI {
+  background: #f8fafc;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.LI:hover {
+  transform: translateY(-4px);
+  border-color: var(--primary);
+  background: #ffffff;
+  box-shadow: 0 12px 20px -5px rgba(37, 99, 235, 0.15);
+}
+
+.LI a {
+  display: block;
+  padding: 20px;
+  text-decoration: none;
+  color: var(--text-main);
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+/* --- Contact Page Styling --- */
+.contact-info {
+  background: #eff6ff;
+  padding: 20px;
+  border-radius: var(--radius-md);
+  border-left: 5px solid var(--primary);
+  margin-bottom: 2rem;
+}
+
+.contact-persons {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  padding: 20px;
+  border-radius: var(--radius-md);
+  margin-bottom: 15px;
+  line-height: 2;
+}
+
+.contact-persons strong {
+  color: var(--primary);
+  font-size: 1.1rem;
+}
+
+/* --- Modern Buttons --- */
+button {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 20px;
+  margin-right: 12px;
+}
+
+button:hover {
+  background-color: var(--primary-hover);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+  transform: scale(1.02);
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+  .page-container, .PTS {
+    margin: 0;
+    padding: 25px 20px;
+    border-radius: 0;
+    min-height: 100vh;
+  }
+
+  .PC, h2 {
+    font-size: 2rem;
+  }
+
+  .UL {
+    grid-template-columns: 1fr; /* Stack items vertically on mobile */
+  }
+
+  .LI a {
+    padding: 18px;
+  }
+}

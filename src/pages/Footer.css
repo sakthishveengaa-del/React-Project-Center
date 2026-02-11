@@ -1,0 +1,128 @@
+/* --- Footer Base --- */
+.footer {
+  background-color: #1f2937; /* Deep dark grey/blue */
+  color: #f3f4f6;
+  padding: 4rem 0 0 0;
+  margin-top: 4rem;
+}
+
+.footer-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: grid;
+  /* Creates up to 3 columns, or fewer if the screen is small */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2.5rem;
+}
+
+/* --- Footer Boxes --- */
+.footer-box h3 {
+  color: #60a5fa; /* Light blue accent */
+  font-size: 1.3rem;
+  margin-bottom: 1.2rem;
+  position: relative;
+}
+
+/* Little accent line under titles */
+.footer-box h3::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: #2563eb;
+  margin-top: 8px;
+}
+
+.footer-box p {
+  line-height: 1.6;
+  color: #9ca3af;
+  font-size: 0.95rem;
+}
+
+/* --- Quick Links --- */
+.footer-box ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-box ul li {
+  margin-bottom: 10px;
+}
+
+.footer-box ul li a {
+  text-decoration: none;
+  color: #d1d5db;
+  transition: all 0.3s ease;
+}
+
+.footer-box ul li a:hover {
+  color: #ffffff;
+  padding-left: 8px; /* Subtle hover slide effect */
+}
+
+/* --- Social Media Links --- */
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.social-links a {
+  text-decoration: none;
+  color: #d1d5db;
+  font-size: 0.9rem;
+  transition: color 0.3s;
+}
+
+.social-links a:hover {
+  color: #60a5fa;
+}
+
+/* --- Bottom Copyright Bar --- */
+.footer-bottom {
+  margin-top: 3rem;
+  padding: 1.5rem;
+  text-align: center;
+  border-top: 1px solid #374151;
+  background-color: #111827; /* Darker bottom bar */
+}
+
+.footer-bottom p {
+  margin: 5px 0;
+  font-size: 0.85rem;
+  color: #9ca3af;
+}
+
+/* --- Responsive Behavior --- */
+@media (max-width: 600px) {
+  .footer {
+    padding-top: 2rem;
+    text-align: center;
+  }
+
+  .footer-box h3::after {
+    margin: 8px auto; /* Centers the accent line on mobile */
+  }
+
+  .social-links {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+}
+
+/* --- List Item Hover Effect --- */
+.UL li {
+  background: var(--card-bg);
+  padding: 15px;
+  border-radius: 8px;
+  border-left: 5px solid var(--primary-color);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  transition: transform 0.2s;
+}
+.UL li:hover {
+  transform: translateX(10px);
+}
+
