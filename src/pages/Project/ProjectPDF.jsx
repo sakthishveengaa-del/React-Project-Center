@@ -2,9 +2,12 @@ import { useLocation, Link } from "react-router-dom";
 
 export default function ProjectPDF() {
   const location = useLocation();
-  const projectTitle = location.state?.projectTitle || "default-project";
 
-  // Mapping project title to PDF file path
+  // ✅ Get project title from Register Page
+  const registrationData = location.state?.registrationData;
+  const projectTitle = registrationData?.projectTitle || "default-project";
+
+  // ✅ Correct PDF Mapping
   const pdfFiles = {
     "Smart Energy Meter": "/pdf/EEE1.pdf",
     "Solar Tracking System": "/pdf/EEE2.pdf",
@@ -49,20 +52,33 @@ export default function ProjectPDF() {
     <div style={{ padding: "20px" }}>
       <h2>{projectTitle} - PDF</h2>
 
+      {/* Student Details */}
+      {registrationData && (
+        <div style={{ background: "#f2f2f2", padding: "10px", marginBottom: "10px" }}>
+          <p className='P'><b>Name:</b> {registrationData.name}</p>
+          <p className='P'><b>Department:</b> {registrationData.department}</p>
+          <p className='P'><b>Project Type:</b> {registrationData.projectType}</p>
+        </div>
+      )}
+
+      {/* PDF Viewer */}
       <iframe
         src={pdfPath}
         width="100%"
         height="600px"
         title={projectTitle}
+        style={{ border: "2px solid black" }}
       ></iframe>
 
       <div style={{ marginTop: "10px" }}>
         <a href={pdfPath} download>
           <button>Download PDF</button>
         </a>
+
         <Link to="/projects">
-          <button style={{ marginLeft: "10px" }}>Back to Departments</button>
+          <button style={{ marginLeft: "10px" }}>Back</button>
         </Link>
+
         <Link to="/">
           <button style={{ marginLeft: "10px" }}>Home</button>
         </Link>
