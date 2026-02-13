@@ -73,7 +73,7 @@ export default function Dashboard() {
                     <td>{p.college}</td>
                     <td>{p.department}</td>
                     <td>{p.projectTitle}</td>
-                    <td><span className={`badge ${p.type}`}>{p.type}</span></td>
+                    <td><span className={`badge ${p.type}`}>{p.projectType}</span></td>
                   </tr>
                 ))}
               </tbody>
